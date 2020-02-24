@@ -1,0 +1,22 @@
+<h3>Student Form</h3>
+<%#= form_for @student do |s| %>
+     <%#= s.label :first_name %>
+     <%#= s.text_field :first_name %>
+  
+     <%#= s.label :last_name %>
+     <%#= s.text_field :last_name %>
+  
+     <%#= s.submit %>
+   <%# end %>
+
+<form action="<%= students_path %>" method="POST">
+
+  <label>Student first_name:</label><br>
+  <input type="text" id="first_name" name="student[first_name]"><br>
+ 
+  <label>Student last_name:</label><br>
+  <input type="text" id="last_name" name="student[last_name]"><br>
+ 
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Submit Student">
+</form>
